@@ -5,7 +5,7 @@ export function Loader() {
     <ThreeCircles
       height="70"
       width="70"
-      color="white"
+      color="blue"
       visible={true}
       ariaLabel="three-circles-rotating"
     />
@@ -15,12 +15,12 @@ export function Loader() {
 export function LoaderBtn() {
   return (
     <Oval
-      height={12}
-      width={12}
-      color="white"
+      height={20}
+      width={20}
+      color="blue"
       visible={true}
       ariaLabel="oval-loading"
-      secondaryColor="#blue"
+      secondaryColor="blue"
       strokeWidth={4}
       strokeWidthSecondary={4}
     />

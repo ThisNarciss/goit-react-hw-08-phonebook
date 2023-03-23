@@ -16,7 +16,7 @@ import { selectContacts } from 'redux/contacts/selectors';
 
 const schema = yup.object().shape({
   name: yup.string().min(2).max(30).trim().required(),
-  phone: yup.string().min(12).max(13).trim().required(),
+  number: yup.string().min(12).max(13).trim().required(),
 });
 
 const nameInputId = nanoid();
@@ -24,7 +24,7 @@ const numberInputId = nanoid();
 
 const initialValue = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 export const ContactForm = () => {
@@ -36,7 +36,7 @@ export const ContactForm = () => {
       ({ name }) => name.toLowerCase() === obj.name.toLowerCase()
     );
     const findNumber = contacts.find(
-      ({ phone }) => phone.toLowerCase() === obj.phone.toLowerCase()
+      ({ number }) => number.toLowerCase() === obj.number.toLowerCase()
     );
 
     if (findName) {
@@ -81,12 +81,12 @@ export const ContactForm = () => {
           <FormInput
             id={numberInputId}
             type="tel"
-            name="phone"
+            name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-          <Error name="phone" component="p" />
+          <Error name="number" component="p" />
         </InputBox>
 
         <ButtonAdd type="submit">Add contact</ButtonAdd>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const UserForm = styled(Form)`
@@ -21,7 +21,7 @@ export const Label = styled.label`
 export const FormInput = styled(Field)`
   padding: 5px 15px;
 
-  border: none;
+  /* border: none; */
   border-radius: 5px;
 `;
 

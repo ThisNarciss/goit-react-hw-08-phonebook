@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { BiSearchAlt } from 'react-icons/bi';
 
 export const FilterBox = styled.div`
