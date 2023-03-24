@@ -6,7 +6,7 @@ export const Link = styled(NavLink)`
   font-size: 16px;
   line-height: 1.15;
   &.active {
-    color: black;
+    color: rgb(25, 118, 210);
   }
   font-family: inherit;
 `;
