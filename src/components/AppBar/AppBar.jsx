@@ -33,7 +33,7 @@ export function PhoneBookAppBar() {
   };
 
   return (
-    <AppBar position="sticky" color="transparent">
+    <AppBar position="sticky" color="inherit">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RecentActorsRoundedIcon
