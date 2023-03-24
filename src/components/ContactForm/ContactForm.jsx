@@ -3,7 +3,6 @@ import {
   UserForm,
   InputBox,
   Label,
-  ButtonAdd,
   FormInput,
   Error,
 } from './ContactForm.styled';
@@ -13,6 +12,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { failureNameNotify, failureNumberNotify } from 'utils/notification';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import Button from '@mui/material/Button';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const schema = yup.object().shape({
   name: yup.string().min(2).max(30).trim().required(),
@@ -88,8 +89,14 @@ export const ContactForm = () => {
           />
           <Error name="number" component="p" />
         </InputBox>
-
-        <ButtonAdd type="submit">Add contact</ButtonAdd>
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          endIcon={<AddCircleIcon fontSize="large" />}
+        >
+          Add
+        </Button>
       </UserForm>
     </Formik>
   );

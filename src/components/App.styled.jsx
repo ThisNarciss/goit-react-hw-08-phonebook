@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 export const ChildrenBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
-
-  width: 350px;
+  width: 100%;
+  /* max-width: 350px; */
 `;
 
 export const Notification = styled.p`

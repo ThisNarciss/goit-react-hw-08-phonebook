@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function SharedLayout() {
   return (
-    <Container>
+    <Container maxWidth="lg">
       <PhoneBookAppBar />
       <Suspense fallback={<Loader />}>
         <Outlet />

@@ -15,7 +15,7 @@ export const Filter = () => {
 
   return (
     <FilterBox>
-      <IconSearch size={20} />
+      <IconSearch size={25} />
       <FilterLabel htmlFor={filterInputId}>Find contacts by name</FilterLabel>
       <FilterInput
         id={filterInputId}

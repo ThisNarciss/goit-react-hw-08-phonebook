@@ -3,10 +3,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 export function userData() {
-  return axios.get('/users/current').then(response => {
-    console.log(response.data);
-    return response.data;
-  });
+  return axios.get('/users/current').then(response => response.data);
 }
 
 export function signUpUserData(obj) {
@@ -22,10 +19,7 @@ export function logoutUserData() {
 }
 
 export function fetchData() {
-  return axios.get('/contacts').then(response => {
-    console.log(response.data);
-    return response.data;
-  });
+  return axios.get('/contacts').then(response => response.data);
 }
 
 export function addData(obj) {
@@ -34,4 +28,10 @@ export function addData(obj) {
 
 export function deleteData(contactId) {
   return axios.delete(`/contacts/${contactId}`).then(response => response.data);
+}
+
+export function editData(contactId, obj) {
+  return axios
+    .patch(`/contacts/${contactId}`, obj)
+    .then(response => response.data);
 }

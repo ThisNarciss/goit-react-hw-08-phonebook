@@ -9,17 +9,6 @@ export const Item = styled.li`
 
 export const Text = styled.p``;
 
-export const ButtonDel = styled.button`
+export const ContainerBtn = styled.div`
   display: flex;
-  align-items: center;
-  width: 70px;
-  padding: 2px 15px;
-  border-radius: 5px;
-  background-color: #2248c3;
-  color: #ffffff;
-  transition: background-color 250ms linear;
-  :hover,
-  :focus {
-    background-color: red;
-  }
 `;

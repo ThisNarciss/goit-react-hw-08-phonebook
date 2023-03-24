@@ -4,6 +4,9 @@ import { Form, Field, ErrorMessage } from 'formik';
 export const UserForm = styled(Form)`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
 `;
 
@@ -19,21 +22,25 @@ export const Label = styled.label`
 `;
 
 export const FormInput = styled(Field)`
-  padding: 5px 15px;
-
-  /* border: none; */
-  border-radius: 5px;
-`;
-
-export const ButtonAdd = styled.button`
-  padding: 5px 15px;
-  border-radius: 5px;
-  background-color: #2248c3;
-  color: #ffffff;
-  transition: background-color 250ms linear;
-  :hover,
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.3rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   :focus {
-    background-color: green;
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
   }
 `;
 

@@ -1,7 +1,16 @@
 // import { nanoid } from 'nanoid';
 import { createSlice } from '@reduxjs/toolkit';
-import { successDelNotify, successNotify } from 'utils/notification';
-import { addContact, deleteContact, fetchContacts } from './operations';
+import {
+  successDelNotify,
+  successEditNotify,
+  successNotify,
+} from 'utils/notification';
+import {
+  addContact,
+  deleteContact,
+  editContact,
+  fetchContacts,
+} from './operations';
 
 const contactsInitialState = {
   items: [],
@@ -30,6 +39,13 @@ const contactsSlice = createSlice({
         state.items = state.items.filter(item => item.id !== payload.id);
         successDelNotify(payload);
       })
+      .addCase(editContact.fulfilled, (state, { payload }) => {
+        const contactIdx = state.items.findIndex(
+          item => item.id === payload.id
+        );
+        state.items.splice(contactIdx, 1, payload);
+        successEditNotify();
+      })
       .addMatcher(isPromise('/fulfilled'), state => {
         state.isLoading = false;
         state.error = null;
@@ -40,6 +56,9 @@ const contactsSlice = createSlice({
       })
       .addMatcher(isPromise('/pending'), state => {
         state.isLoading = true;
+      })
+      .addMatcher(isPromise('editContact/pending'), state => {
+        state.isLoading = false;
       })
       .addMatcher(isPromise('deleteContact/pending'), state => {
         state.isLoading = false;

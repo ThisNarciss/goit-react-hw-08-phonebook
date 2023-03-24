@@ -3,13 +3,13 @@ import { BiSearchAlt } from 'react-icons/bi';
 
 export const FilterBox = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+  width: 100%;
 `;
 
 export const IconSearch = styled(BiSearchAlt)`
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 5px;
   color: grey;
 `;
@@ -17,13 +17,28 @@ export const IconSearch = styled(BiSearchAlt)`
 export const FilterLabel = styled.label``;
 
 export const FilterInput = styled.input`
-  padding: 5px 25px;
-  outline: none;
-  border: 2px solid grey;
-  border-radius: 20px;
-  transition: border 250ms linear;
-  :hover,
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 1.25rem 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   :focus {
-    border: 2px solid green;
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
   }
 `;

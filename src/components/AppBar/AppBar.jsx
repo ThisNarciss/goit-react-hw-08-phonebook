@@ -6,9 +6,8 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-
 import RecentActorsRoundedIcon from '@mui/icons-material/RecentActorsRounded';
-import { Link } from './AppBar.styled';
+import { Link, List } from './AppBar.styled';
 import { useState } from 'react';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
@@ -34,7 +33,7 @@ export function PhoneBookAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <RecentActorsRoundedIcon
@@ -87,8 +86,12 @@ export function PhoneBookAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <Link to="/">Home</Link>
-              {isLoggedIn && <Link to="/contacts">Contacts</Link>}
+              <List>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>{isLoggedIn && <Link to="/contacts">Contacts</Link>}</li>
+              </List>
             </Menu>
           </Box>
           <RecentActorsRoundedIcon
@@ -113,14 +116,22 @@ export function PhoneBookAppBar() {
             PHONEBOOK
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Link to="/">Home</Link>
-            {isLoggedIn && <Link to="/contacts">Contacts</Link>}
+            <List>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>{isLoggedIn && <Link to="/contacts">Contacts</Link>}</li>
+            </List>
           </Box>
           {!isLoggedIn ? (
-            <div>
-              <Link to="/register">Register</Link>
-              <Link to="/login">Login</Link>
-            </div>
+            <List>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </List>
           ) : (
             <UserMenu
               anchorElUser={anchorElUser}

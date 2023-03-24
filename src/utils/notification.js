@@ -1,34 +1,25 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+const settings = { timeout: 2000, cssAnimationStyle: 'from-right' };
+
 export function failureNameNotify(contact) {
-  Notify.failure(`${contact.name} is already in contacts`, {
-    timeout: 2000,
-    cssAnimationStyle: 'from-right',
-  });
+  Notify.failure(`${contact.name} is already in contacts`, settings);
 }
 export function failureNumberNotify(contact) {
-  Notify.failure(`This is ${contact.name} phone number`, {
-    timeout: 2000,
-    cssAnimationStyle: 'from-right',
-  });
+  Notify.failure(`This is ${contact.name} phone number`, settings);
 }
 export function successNotify(contact) {
-  Notify.success(`${contact.name} add to the contacts`, {
-    timeout: 2000,
-    cssAnimationStyle: 'from-right',
-  });
+  Notify.success(`${contact.name} add to the contacts`, settings);
 }
 
 export function successDelNotify(contact) {
-  Notify.success(`${contact.name} delete from the contacts`, {
-    timeout: 2000,
-    cssAnimationStyle: 'from-right',
-  });
+  Notify.success(`${contact.name} delete from the contacts`, settings);
+}
+
+export function successEditNotify() {
+  Notify.success(`Contact edits`, settings);
 }
 
 export function errorNotify(error) {
-  Notify.failure(`${error}`, {
-    timeout: 2000,
-    cssAnimationStyle: 'from-right',
-  });
+  Notify.failure(`${error}`, settings);
 }

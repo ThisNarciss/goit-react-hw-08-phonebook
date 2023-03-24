@@ -15,7 +15,7 @@ import {
 import { errorNotify } from 'utils/notification';
 import Container from '@mui/material/Container';
 
-export function Contacts() {
+export default function Contacts() {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -31,7 +31,7 @@ export function Contacts() {
   }, [error]);
   return (
     <main>
-      <Container>
+      <Container maxWidth="xl">
         <Section title="Phonebook">
           <ContactForm />
         </Section>
