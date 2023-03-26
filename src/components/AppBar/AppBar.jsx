@@ -6,11 +6,19 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import RecentActorsRoundedIcon from '@mui/icons-material/RecentActorsRounded';
-import { Link, List } from './AppBar.styled';
+
+import {
+  IconLogoBox,
+  IconLogoMobBox,
+  Link,
+  List,
+  LogoNameBox,
+  SiteName,
+} from './AppBar.styled';
 import { useState } from 'react';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
+import { LogoIcon, LogoMobileIcon } from 'custom-icon/LogoMobileIcon';
 
 export function PhoneBookAppBar() {
   const { isLoggedIn } = useAuth();
@@ -28,9 +36,9 @@ export function PhoneBookAppBar() {
     <AppBar position="sticky" color="inherit">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <RecentActorsRoundedIcon
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-          />
+          <IconLogoBox>
+            <LogoIcon size={40} />
+          </IconLogoBox>
           <Typography
             variant="h6"
             noWrap
@@ -85,9 +93,12 @@ export function PhoneBookAppBar() {
               </List>
             </Menu>
           </Box>
-          <RecentActorsRoundedIcon
-            sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
-          />
+          <IconLogoMobBox>
+            <LogoIcon size={40} />
+          </IconLogoMobBox>
+          <LogoNameBox>
+            <LogoMobileIcon size={70} />
+          </LogoNameBox>
           <Typography
             variant="h5"
             noWrap
@@ -104,7 +115,7 @@ export function PhoneBookAppBar() {
               textDecoration: 'none',
             }}
           >
-            PHONEBOOK
+            <SiteName>PHONEBOOK</SiteName>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <List>

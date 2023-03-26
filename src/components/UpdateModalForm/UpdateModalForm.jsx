@@ -11,7 +11,7 @@ import { editContact } from 'redux/contacts/operations';
 import { LoaderBtn } from 'components/Loader/Loader';
 import { Formik } from 'formik';
 import Button from '@mui/material/Button';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 import {
   Error,
   FormInput,
@@ -72,7 +72,21 @@ export function UpdateModalForm({ id, name, number }) {
 
   return (
     <>
-      <IconButton aria-label="edits" size="medium" onClick={handleOpen}>
+      <IconButton
+        aria-label="edits"
+        size="medium"
+        onClick={handleOpen}
+        sx={{
+          ':hover': {
+            backgroundColor: 'green',
+            color: 'white',
+          },
+          transitionProperty: 'all',
+
+          transitionDuration: '250ms',
+          transitionTimingFunction: 'linear',
+        }}
+      >
         {!isEdit && <EditIcon fontSize="inherit" />}
         {isEdit && editBtnId === id && <LoaderBtn />}
       </IconButton>
@@ -122,7 +136,7 @@ export function UpdateModalForm({ id, name, number }) {
                   type="submit"
                   variant="contained"
                   size="large"
-                  endIcon={<AddCircleIcon fontSize="large" />}
+                  endIcon={<EditIcon fontSize="inherit" />}
                 >
                   Edit
                 </Button>

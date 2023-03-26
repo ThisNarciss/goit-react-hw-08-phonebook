@@ -1,5 +1,9 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 export default function Register() {
-  return <RegisterForm />;
+  return (
+    <main>
+      <RegisterForm />
+    </main>
+  );
 }

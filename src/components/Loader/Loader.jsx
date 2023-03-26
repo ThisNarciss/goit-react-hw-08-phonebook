@@ -1,13 +1,14 @@
-import { Oval, ThreeCircles } from 'react-loader-spinner';
+import { Blocks, Oval } from 'react-loader-spinner';
 
 export function Loader() {
   return (
-    <ThreeCircles
-      height="70"
-      width="70"
-      color="blue"
+    <Blocks
       visible={true}
-      ariaLabel="three-circles-rotating"
+      height="80"
+      width="80"
+      ariaLabel="blocks-loading"
+      wrapperStyle={{}}
+      wrapperClass="blocks-wrapper"
     />
   );
 }
@@ -17,10 +18,10 @@ export function LoaderBtn() {
     <Oval
       height={20}
       width={20}
-      color="blue"
+      color="white"
       visible={true}
       ariaLabel="oval-loading"
-      secondaryColor="blue"
+      secondaryColor="#1976d2"
       strokeWidth={4}
       strokeWidthSecondary={4}
     />

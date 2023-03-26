@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { NavLink } from 'react-router-dom';
 
 export const Link = styled(NavLink)`
@@ -14,6 +15,35 @@ export const Link = styled(NavLink)`
   @media screen and (min-width: 600px) {
     font-size: 16px;
     padding: 0 10px;
+  }
+`;
+export const LogoNameBox = styled.div`
+  display: block;
+
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+`;
+export const IconLogoBox = styled.div`
+  display: none;
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+`;
+export const IconLogoMobBox = styled.div`
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: block;
+  }
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+`;
+
+export const SiteName = styled.span`
+  display: none;
+  @media screen and (min-width: 600px) {
+    display: block;
   }
 `;
 

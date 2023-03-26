@@ -93,6 +93,12 @@ export const ContactForm = () => {
           type="submit"
           variant="contained"
           size="large"
+          sx={{
+            transitionProperty: 'all',
+
+            transitionDuration: '250ms',
+            transitionTimingFunction: 'linear',
+          }}
           endIcon={<AddCircleIcon fontSize="large" />}
         >
           Add
