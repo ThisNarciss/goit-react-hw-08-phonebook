@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import * as yup from 'yup';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
@@ -8,6 +9,16 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 import { LoaderBtn } from 'components/Loader/Loader';
+import { Formik } from 'formik';
+import Button from '@mui/material/Button';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import {
+  Error,
+  FormInput,
+  InputBox,
+  Label,
+  UserForm,
+} from 'components/FormStyle.styled';
 
 const style = {
   position: 'absolute',
@@ -20,6 +31,11 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+const schema = yup.object().shape({
+  name: yup.string().min(2).max(30).trim().required(),
+  number: yup.string().min(12).max(13).trim().required(),
+});
 
 const nameInputId = nanoid();
 const numberInputId = nanoid();
@@ -36,18 +52,22 @@ export function UpdateModalForm({ id, name, number }) {
   };
   const handleClose = () => setOpen(false);
 
-  const handleSubmitEditsContact = e => {
-    e.preventDefault();
+  const editedContact = value => {
     setIsEdit(true);
     dispatch(
       editContact({
         id: editBtnId,
-        value: { name: e.target.name.value, number: e.target.number.value },
+        value: { name: value.name, number: value.number },
       })
     )
       .unwrap()
       .finally(() => setIsEdit(false));
     setOpen(false);
+  };
+
+  const handleSubmitEditsContact = (values, { resetForm }) => {
+    editedContact(values);
+    resetForm();
   };
 
   return (
@@ -64,23 +84,51 @@ export function UpdateModalForm({ id, name, number }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <form onSubmit={handleSubmitEditsContact}>
-            <label htmlFor={nameInputId}></label>
-            <input
-              defaultValue={name}
-              type="text"
-              name="name"
-              id={nameInputId}
-            />
-            <label htmlFor={numberInputId}></label>
-            <input
-              defaultValue={number}
-              type="tel"
-              name="number"
-              id={numberInputId}
-            />
-            <button onClose={handleClose}>edits</button>
-          </form>
+          <Formik
+            validationSchema={schema}
+            initialValues={{ name, number }}
+            onSubmit={handleSubmitEditsContact}
+          >
+            {({ values }) => (
+              <UserForm>
+                <InputBox>
+                  <Label htmlFor={nameInputId}>Name</Label>
+                  <FormInput
+                    id={nameInputId}
+                    type="text"
+                    name="name"
+                    pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                    title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                    required
+                    value={values.name}
+                  />
+                  <Error name="name" component="p" />
+                </InputBox>
+
+                <InputBox>
+                  <Label htmlFor={numberInputId}>Number</Label>
+                  <FormInput
+                    id={numberInputId}
+                    type="tel"
+                    name="number"
+                    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                    title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                    required
+                    value={values.number}
+                  />
+                  <Error name="number" component="p" />
+                </InputBox>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  endIcon={<AddCircleIcon fontSize="large" />}
+                >
+                  Edit
+                </Button>
+              </UserForm>
+            )}
+          </Formik>
         </Box>
       </Modal>
     </>

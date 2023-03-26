@@ -5,6 +5,8 @@ export const Item = styled.li`
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  border: 1px solid #bdbdbd;
+  padding: 5px;
 `;
 
 export const Text = styled.p``;

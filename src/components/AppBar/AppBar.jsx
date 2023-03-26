@@ -15,21 +15,13 @@ import { useAuth } from 'hooks/useAuth';
 export function PhoneBookAppBar() {
   const { isLoggedIn } = useAuth();
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -43,7 +35,7 @@ export function PhoneBookAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/goit-react-hw-08-phonebook"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -56,7 +48,6 @@ export function PhoneBookAppBar() {
           >
             PHONEBOOK
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -101,7 +92,7 @@ export function PhoneBookAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/goit-react-hw-08-phonebook"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -133,11 +124,7 @@ export function PhoneBookAppBar() {
               </li>
             </List>
           ) : (
-            <UserMenu
-              anchorElUser={anchorElUser}
-              handleOpenUserMenu={handleOpenUserMenu}
-              handleCloseUserMenu={handleCloseUserMenu}
-            />
+            <UserMenu />
           )}
         </Toolbar>
       </Container>

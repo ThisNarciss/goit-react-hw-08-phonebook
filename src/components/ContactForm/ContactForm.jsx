@@ -5,7 +5,7 @@ import {
   Label,
   FormInput,
   Error,
-} from './ContactForm.styled';
+} from 'components/FormStyle.styled';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';

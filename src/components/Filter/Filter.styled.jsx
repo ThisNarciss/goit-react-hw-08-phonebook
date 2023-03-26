@@ -9,7 +9,7 @@ export const FilterBox = styled.div`
 
 export const IconSearch = styled(BiSearchAlt)`
   position: absolute;
-  top: 25px;
+  top: 10px;
   left: 5px;
   color: grey;
 `;

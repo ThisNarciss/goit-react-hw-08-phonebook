@@ -9,18 +9,22 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { useState } from 'react';
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
+function getHexColor(name) {
+  const unicode = name
+    .split(' ')
+    .map(item => item.charCodeAt(0))
+    .join('');
+
+  return `#${unicode.padStart(6, 0)}`;
 }
 
 function stringAvatar(name) {
   return {
     sx: {
-      bgcolor: getRandomHexColor(),
-      color: 'black',
+      bgcolor: getHexColor(name),
+      color: 'white',
     },
     children: `${name
       .split(' ')
@@ -29,13 +33,18 @@ function stringAvatar(name) {
   };
 }
 
-export function UserMenu({
-  handleCloseUserMenu,
-  handleOpenUserMenu,
-  anchorElUser,
-}) {
+export function UserMenu() {
+  const [anchorElUser, setAnchorElUser] = useState(null);
   const dispatch = useDispatch();
   const { user } = useAuth();
+
+  const handleOpenUserMenu = event => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   const handleClickLogoutBtn = e => {
     dispatch(logoutUser());

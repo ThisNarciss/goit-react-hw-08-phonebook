@@ -16,12 +16,15 @@ export const Filter = () => {
   return (
     <FilterBox>
       <IconSearch size={25} />
-      <FilterLabel htmlFor={filterInputId}>Find contacts by name</FilterLabel>
+      <FilterLabel
+        aria-label="find contacts by name"
+        htmlFor={filterInputId}
+      ></FilterLabel>
       <FilterInput
         id={filterInputId}
         type="text"
         name="filter"
-        placeholder="Search"
+        placeholder="Search..."
         onChange={handleFilterChange}
       />
     </FilterBox>
