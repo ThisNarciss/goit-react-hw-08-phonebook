@@ -5,6 +5,7 @@ export const FilterBox = styled.div`
   position: relative;
   text-align: center;
   width: 100%;
+  background-image: url('./images/bg-01.jpg');
 `;
 
 export const IconSearch = styled(BiSearchAlt)`

@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { ContainerBtn, Item, ItemLetter, Text } from './ContactItem.styled';
+import {
+  ContainerBtn,
+  Item,
+  ItemLetter,
+  Text,
+  Letter,
+} from './ContactItem.styled';
 import { BiUser } from 'react-icons/bi';
 import { deleteContact } from 'redux/contacts/operations';
 import { LoaderBtn } from 'components/Loader/Loader';
@@ -24,9 +30,13 @@ export function ContactItem({ bool, id, name, number }) {
 
   return (
     <>
-      {bool && <ItemLetter>{name.slice(0, 1)}</ItemLetter>}
+      {bool && (
+        <ItemLetter>
+          <Letter>{name.slice(0, 1)}</Letter>
+        </ItemLetter>
+      )}
       <Item>
-        <BiUser />
+        <BiUser size={20} />
         <Text>
           {name}: {number}
         </Text>

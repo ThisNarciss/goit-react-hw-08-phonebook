@@ -47,10 +47,12 @@ export const FormInput = styled(Field)`
 
 export const FormRegLog = styled(Form)`
   max-width: 500px;
-  padding: 10px 20px;
-  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px;
+  background: #9152f8;
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
   margin: 0 auto;
-  padding: 20px;
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
     0 2px 2px rgba(0, 0, 0, 0.12);
 `;

@@ -30,7 +30,15 @@ export default function ContactsSection() {
     errorNotify(error);
   }, [error]);
   return (
-    <>
+    <Container
+      sx={{
+        display: {
+          md: 'flex',
+          justifyContent: 'center',
+          alignItems: 'start',
+        },
+      }}
+    >
       <Section title="Phonebook">
         <Container maxWidth="xl">
           <ContactForm />
@@ -41,7 +49,7 @@ export default function ContactsSection() {
           maxWidth="xl"
           sx={{
             display: {
-              md: 'flex',
+              xs: 'flex',
               justifyContent: 'center',
               flexDirection: 'column',
               alignItems: 'center',
@@ -59,6 +67,6 @@ export default function ContactsSection() {
           {isLoading && !error && <Loader />}
         </Container>
       </Section>
-    </>
+    </Container>
   );
 }

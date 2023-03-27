@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import bgimg from 'images/bg-01.jpg';
 
 export const TitleBox = styled.div`
   display: flex;
@@ -9,6 +10,23 @@ export const SectionBox = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 20px 0px;
+  background-image: url(${bgimg});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 `;
 
 export const Title = styled.h1`

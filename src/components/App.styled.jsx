@@ -6,7 +6,7 @@ export const ChildrenBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
-  max-width: 350px;
+  max-width: 450px;
 `;
 
 export const Notification = styled.p`
