@@ -6,12 +6,16 @@ import Button from '@mui/material/Button';
 import { Section } from 'components/Section/Section';
 import { Container } from '@mui/system';
 import { Formik } from 'formik';
+import { BiLogIn } from 'react-icons/bi';
 
 import {
+  Bar,
   Error,
   FormRegLog,
+  InputLabelBox,
   InputRegLog,
   LabelRegLog,
+  Title,
 } from 'components/FormStyle.styled';
 
 const emailId = nanoid();
@@ -48,27 +52,45 @@ export function LoginForm() {
           onSubmit={handleFormSubmit}
         >
           <FormRegLog>
-            <LabelRegLog htmlFor={emailId}>Email</LabelRegLog>
-            <InputRegLog
-              type="email"
-              name="email"
-              id={emailId}
-              required
-              placeholder="Email*"
+            <BiLogIn
+              size={100}
+              style={{
+                color: 'white',
+                textAlign: 'center',
+                marginBottom: '5px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
             />
-            <Error name="email" component="p" />
+            <Title>Login</Title>
+            <InputLabelBox>
+              <InputRegLog type="email" name="email" id={emailId} required />
+              <Bar />
+              <LabelRegLog htmlFor={emailId}>Email</LabelRegLog>
+              <Error name="email" component="p" />
+            </InputLabelBox>
 
-            <LabelRegLog htmlFor={passwordId}>Password</LabelRegLog>
-            <InputRegLog
-              type="password"
-              name="password"
-              id={passwordId}
-              required
-              placeholder="Password*"
-            />
-            <Error name="password" component="p" />
+            <InputLabelBox>
+              <InputRegLog
+                type="password"
+                name="password"
+                id={passwordId}
+                required
+              />
+              <Bar />
+              <LabelRegLog htmlFor={passwordId}>Password</LabelRegLog>
+              <Error name="password" component="p" />
+            </InputLabelBox>
 
-            <Button type="submit" variant="contained">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                fontFamily: 'monospace',
+                fontWeight: '700',
+                letterSpacing: '1px',
+              }}
+            >
               Login
             </Button>
           </FormRegLog>

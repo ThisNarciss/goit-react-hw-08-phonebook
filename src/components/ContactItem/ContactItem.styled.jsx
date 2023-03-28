@@ -20,6 +20,12 @@ export const ItemLetter = styled.li`
 `;
 
 export const Text = styled.p``;
+export const TelLink = styled.a`
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  :hover {
+    color: rgb(25, 118, 210);
+  }
+`;
 export const Letter = styled.p`
   width: 100%;
 `;

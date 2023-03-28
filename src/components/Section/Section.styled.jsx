@@ -7,9 +7,10 @@ export const TitleBox = styled.div`
 export const SectionBox = styled.section`
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   padding: 20px 0px;
+  height: 100vh;
   background-image: url(${bgimg});
   background-repeat: no-repeat;
   background-position: center;

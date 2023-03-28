@@ -6,6 +6,7 @@ import {
   ItemLetter,
   Text,
   Letter,
+  TelLink,
 } from './ContactItem.styled';
 import { BiUser } from 'react-icons/bi';
 import { deleteContact } from 'redux/contacts/operations';
@@ -38,7 +39,7 @@ export function ContactItem({ bool, id, name, number }) {
       <Item>
         <BiUser size={20} />
         <Text>
-          {name}: {number}
+          {name}: <TelLink href={`tel:${number}`}>{number}</TelLink>
         </Text>
         <ContainerBtn>
           <IconButton
@@ -51,9 +52,8 @@ export function ContactItem({ bool, id, name, number }) {
             sx={{
               ':hover': { color: 'white', backgroundColor: 'red' },
               transitionProperty: 'all',
-
               transitionDuration: '250ms',
-              transitionTimingFunction: 'linear',
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1) 0ms',
             }}
           >
             {!isDeleting && <DeleteIcon fontSize="inherit" />}

@@ -1,11 +1,9 @@
-import Container from '@mui/material/Container';
+import { Homepage } from 'components/HomePage/HomePage';
 
 export default function Home() {
   return (
     <main>
-      <Container maxWidth="xl">
-        <div style={{ color: 'black' }}>Home Page Content</div>
-      </Container>
+      <Homepage />
     </main>
   );
 }

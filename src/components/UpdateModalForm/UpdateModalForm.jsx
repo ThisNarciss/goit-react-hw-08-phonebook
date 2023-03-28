@@ -84,7 +84,7 @@ export function UpdateModalForm({ id, name, number }) {
           transitionProperty: 'all',
 
           transitionDuration: '250ms',
-          transitionTimingFunction: 'linear',
+          transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1) 0ms',
         }}
       >
         {!isEdit && <EditIcon fontSize="inherit" />}

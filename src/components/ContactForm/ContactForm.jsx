@@ -95,7 +95,6 @@ export const ContactForm = () => {
           size="large"
           sx={{
             transitionProperty: 'all',
-
             transitionDuration: '250ms',
             transitionTimingFunction: 'linear',
           }}
