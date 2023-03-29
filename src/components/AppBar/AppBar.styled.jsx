@@ -27,7 +27,7 @@ export const Link = styled(NavLink)`
   font-size: 14px;
   line-height: 1.15;
   position: relative;
-  color: #ffffff;
+  /* color: #ffffff; */
   padding: 5px 10px;
 
   transition: all 250ms linear;
@@ -80,7 +80,7 @@ export const Link = styled(NavLink)`
         height: 5px;
         width: 100%;
         position: absolute;
-        background-color: #fff68f;
+        /* background-color: #fff68f; */
       }
     }
   }

@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-
 import {
   IconLogoBox,
   IconLogoMobBox,
@@ -20,10 +19,21 @@ import { useState } from 'react';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { LogoIcon } from 'custom-icon/LogoMobileIcon';
+import { MaterialUISwitch } from 'components/Switch/Switch';
+
+import { useMyContext } from 'components/ThemeContainer/ThemeContainer';
 
 export function SiteAppBar() {
+  const colorMode = useMyContext();
   const { isLoggedIn } = useAuth();
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [checked, setChecked] = useState(true);
+
+  const handleChange = event => {
+    colorMode.toggleColorMode();
+
+    setChecked(event.target.checked);
+  };
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
@@ -34,11 +44,7 @@ export function SiteAppBar() {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      color="inherit"
-      sx={{ backgroundImage: 'linear-gradient( #7579ff, #b224ef)' }}
-    >
+    <AppBar position="sticky" color="inherit">
       <Container maxWidth="xl">
         <nav>
           <Toolbar
@@ -62,7 +68,7 @@ export function SiteAppBar() {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
-                color: 'white',
+                // color: 'white',
                 textDecoration: 'none',
               }}
             >
@@ -125,7 +131,7 @@ export function SiteAppBar() {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
-                color: 'white',
+                // color: 'white',
                 textDecoration: 'none',
               }}
             >
@@ -153,6 +159,11 @@ export function SiteAppBar() {
             ) : (
               <UserMenu />
             )}
+            <MaterialUISwitch
+              sx={{ m: 1 }}
+              checked={checked}
+              onChange={handleChange}
+            ></MaterialUISwitch>
           </Toolbar>
         </nav>
       </Container>

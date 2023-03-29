@@ -26,7 +26,18 @@ export const SectionBox = styled.section`
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: ${({ theme }) => {
+      switch (theme.palette.mode) {
+        case 'light':
+          return 'rgba(255, 255, 255, 0.9)';
+
+        case 'dark':
+          return 'rgba(75, 73, 73, 0.9)';
+
+        default:
+          return 'rgba(255, 255, 255, 0.9)';
+      }
+    }};
   }
 `;
 
