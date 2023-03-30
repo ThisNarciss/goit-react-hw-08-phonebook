@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
@@ -45,6 +45,7 @@ export function App() {
           }
         />
       </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
