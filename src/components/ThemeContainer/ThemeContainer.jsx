@@ -1,6 +1,6 @@
 import { App } from 'components/App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { useState, useMemo, createContext, useContext } from 'react';
+import { useState, useMemo, createContext, useContext, useEffect } from 'react';
 import { grey, deepPurple, purple } from '@mui/material/colors';
 
 function getThemeDesign(mode) {
@@ -42,7 +42,13 @@ const ColorModeContext = createContext({ toggleColorMode: () => {} });
 export const useMyContext = () => useContext(ColorModeContext);
 
 export function ThemeContainer() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState(
+    () => JSON.parse(localStorage.getItem('mode')) ?? 'light'
+  );
+
+  useEffect(() => {
+    localStorage.setItem('mode', JSON.stringify(mode));
+  }, [mode]);
 
   const colorMode = useMemo(
     () => ({

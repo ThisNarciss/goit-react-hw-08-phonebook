@@ -20,10 +20,12 @@ export function Footer() {
         }}
       >
         <FooterText variant="body2">
-          &#169; 2023 | All Rights Reserved |
+          &#169; 2023 | All Rights Reserved | Developed by
         </FooterText>
 
-        <FooterLink>Developed by ThisNarciss</FooterLink>
+        <FooterLink href="https://github.com/ThisNarciss/goit-react-hw-08-phonebook.git">
+          ThisNarciss
+        </FooterLink>
       </Container>
     </FooterBox>
   );

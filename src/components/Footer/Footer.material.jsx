@@ -9,4 +9,7 @@ export const FooterText = styled(Typography)(({ theme }) => ({
 export const FooterLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   color: theme.palette.mode === 'dark' ? 'white' : 'black',
+  ':hover': {
+    textDecoration: 'underline',
+  },
 }));

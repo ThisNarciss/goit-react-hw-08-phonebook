@@ -15,7 +15,7 @@ import {
   LogoNameBox,
   SiteName,
 } from './AppBar.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { LogoIcon } from 'custom-icon/LogoMobileIcon';
@@ -27,7 +27,13 @@ export function SiteAppBar() {
   const colorMode = useMyContext();
   const { isLoggedIn } = useAuth();
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(
+    () => JSON.parse(localStorage.getItem('checked')) ?? true
+  );
+
+  useEffect(() => {
+    localStorage.setItem('checked', JSON.stringify(checked));
+  }, [checked]);
 
   const handleChange = event => {
     colorMode.toggleColorMode();
