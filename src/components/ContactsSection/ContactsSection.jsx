@@ -30,43 +30,30 @@ export default function ContactsSection() {
     errorNotify(error);
   }, [error]);
   return (
-    <Container
-      sx={{
-        display: {
-          md: 'flex',
-          justifyContent: 'center',
-          alignItems: 'start',
-        },
-      }}
-    >
-      <Section title="Phonebook">
-        <Container maxWidth="xl">
-          <ContactForm />
-        </Container>
-      </Section>
-      <Section title="Contacts">
-        <Container
-          maxWidth="xl"
-          sx={{
-            display: {
-              xs: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column',
-              alignItems: 'center',
-            },
-          }}
-        >
-          {contacts.length ? (
-            <ChildrenBox>
-              <Filter />
-              <ContactList />
-            </ChildrenBox>
-          ) : (
-            <Notification>There are no contacts in the phone book</Notification>
-          )}
-          {isLoading && !error && <Loader />}
-        </Container>
-      </Section>
-    </Container>
+    <Section title="Contacts">
+      <Container
+        maxWidth="xl"
+        sx={{
+          display: {
+            xs: 'flex',
+          },
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: { md: 'center' },
+          alignItems: { xs: 'center' },
+          gap: '50px',
+        }}
+      >
+        <ContactForm />
+        {contacts.length ? (
+          <ChildrenBox>
+            <Filter />
+            <ContactList />
+          </ChildrenBox>
+        ) : (
+          <Notification>There are no contacts in the phone book</Notification>
+        )}
+        {isLoading && !error && <Loader />}
+      </Container>
+    </Section>
   );
 }

@@ -9,8 +9,8 @@ export function Homepage() {
         maxWidth="xl"
         sx={{
           backgroundImage: `url(${bgImgHomePage})`,
-          width: '1000px',
-          height: '700px',
+          maxWidth: '1000px',
+          maxHeight: '700px',
           borderRadius: '10px',
         }}
       ></Container>

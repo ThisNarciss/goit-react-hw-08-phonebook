@@ -19,7 +19,7 @@ function getThemeDesign(mode) {
 
             text: {
               primary: grey[900],
-              secondary: grey[800],
+              secondary: grey[900],
             },
           }
         : {

@@ -1,14 +1,67 @@
 import styled from '@emotion/styled';
 
-export const Item = styled.li`
+export const ContainerItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+`;
+
+export const Item = styled.li`
+  position: relative;
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
+  background-color: ${({ theme }) =>
+    theme.palette.mode === 'dark' ? '#512da8' : '#e1bee7'};
+  background-image: linear-gradient(to right, rgb(0 0 0 / 0.15), transparent);
+  transform-style: preserve-3d;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 0.5rem;
+  column-gap: 2rem;
 
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
     0 2px 2px rgba(0, 0, 0, 0.12);
-  padding: 5px;
+  ::before {
+    --ry: -1;
+    right: 100%;
+    --side-rotate: 60deg;
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: calc(50% - (50% * var(--ry))) 50%;
+    transform: rotateY(calc(var(--side-rotate) * var(--ry)));
+    background-color: inherit;
+    background-image: linear-gradient(
+      calc(90deg * var(--ry)),
+      rgb(0 0 0 / 0.25),
+      rgb(0 0 0 / 0.5)
+    );
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+      0 2px 2px rgba(0, 0, 0, 0.12);
+  }
+  ::after {
+    --ry: 1;
+    left: 100%;
+    --side-rotate: 60deg;
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: calc(50% - (50% * var(--ry))) 50%;
+    transform: rotateY(calc(var(--side-rotate) * var(--ry)));
+    background-color: inherit;
+    background-image: linear-gradient(
+      calc(90deg * var(--ry)),
+      rgb(0 0 0 / 0.25),
+      rgb(0 0 0 / 0.5)
+    );
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+      0 2px 2px rgba(0, 0, 0, 0.12);
+  }
 `;
 export const ItemLetter = styled.li`
   display: flex;
@@ -19,13 +72,6 @@ export const ItemLetter = styled.li`
   padding: 5px;
 `;
 
-export const Text = styled.p``;
-export const TelLink = styled.a`
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  :hover {
-    color: rgb(25, 118, 210);
-  }
-`;
 export const Letter = styled.p`
   width: 100%;
 `;

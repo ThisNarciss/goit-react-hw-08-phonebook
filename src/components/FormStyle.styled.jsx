@@ -6,7 +6,7 @@ import bgImgHomePage from 'images/bg-02.webp';
 export const UserForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 450px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -17,7 +17,7 @@ export const InputBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-width: 400px;
+  max-width: 450px;
 `;
 
 export const Label = styled.label`

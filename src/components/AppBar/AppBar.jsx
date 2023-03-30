@@ -44,7 +44,11 @@ export function SiteAppBar() {
   };
 
   return (
-    <AppBar position="sticky" color="inherit">
+    <AppBar
+      position="sticky"
+      color="inherit"
+      sx={{ transition: 'background-color 250ms linear' }}
+    >
       <Container maxWidth="xl">
         <nav>
           <Toolbar
@@ -68,7 +72,7 @@ export function SiteAppBar() {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
-                // color: 'white',
+                transition: 'color 250ms linear',
                 textDecoration: 'none',
               }}
             >
@@ -131,7 +135,7 @@ export function SiteAppBar() {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
-                // color: 'white',
+                transition: 'color 250ms linear',
                 textDecoration: 'none',
               }}
             >

@@ -10,7 +10,7 @@ export const SectionBox = styled.section`
 
   align-items: center;
   padding: 20px 0px;
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url(${bgimg});
   background-repeat: no-repeat;
   background-position: center;
@@ -26,6 +26,7 @@ export const SectionBox = styled.section`
     height: 100%;
     top: 0;
     left: 0;
+    transition: background-color 250ms linear;
     background-color: ${({ theme }) => {
       switch (theme.palette.mode) {
         case 'light':

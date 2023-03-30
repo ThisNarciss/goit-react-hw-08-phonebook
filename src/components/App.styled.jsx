@@ -1,12 +1,16 @@
 import styled from '@emotion/styled';
+import bgImgHomePage from 'images/bg-02.webp';
 
 export const ChildrenBox = styled.div`
+  padding: 30px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  max-width: 450px;
+  max-width: 700px;
+  background-image: url(${bgImgHomePage});
 `;
 
 export const Notification = styled.p`
