@@ -88,7 +88,7 @@ export const Back = styled.div`
     }
   }
   animation-name: changePositionBack;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -150,7 +150,7 @@ export const PageSix = styled.div`
     }
   }
   animation-name: changePositionSix;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
   overflow: hidden;
@@ -185,7 +185,7 @@ export const PageFive = styled.div`
     }
   }
   animation-name: changePositionFive;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -224,7 +224,7 @@ export const PageFore = styled.div`
     }
   }
   animation-name: changePositionFore;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -259,7 +259,7 @@ export const PageThree = styled.div`
     }
   }
   animation-name: changePositionThree;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -294,7 +294,7 @@ export const PageTwo = styled.div`
     }
   }
   animation-name: changePositionTwo;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -329,7 +329,7 @@ export const PageOne = styled.div`
     }
   }
   animation-name: changePositionOne;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -364,7 +364,7 @@ export const Front = styled.div`
     }
   }
   animation-name: changePositionFront;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
 
@@ -406,6 +406,44 @@ export const Front = styled.div`
   border-left: 1px solid #242424;
   border-bottom-right-radius: 0.5em;
   border-top-right-radius: 0.5em;
+  :after {
+    content: '';
+    position: absolute;
+
+    height: 20px;
+    width: 2px;
+    margin-left: -1px;
+    background: #b8cbdb;
+    border-right: 1px solid #315c83;
+    margin-top: 15px;
+    @media screen and (min-width: 370px) {
+      height: 30px;
+      margin-top: 10px;
+    }
+    @media screen and (min-width: 900px) {
+      height: 40px;
+      margin-top: 30px;
+    }
+  }
+  :before {
+    content: '';
+    position: absolute;
+
+    height: 20px;
+    width: 2px;
+    margin-left: -1px;
+    background: #b8cbdb;
+    border-right: 1px solid #315c83;
+    margin-top: 20px;
+    @media screen and (min-width: 370px) {
+      height: 30px;
+      margin-top: 20px;
+    }
+    @media screen and (min-width: 900px) {
+      height: 40px;
+      margin-top: 20px;
+    }
+  }
   @media screen and (min-width: 900px) {
     width: 150px;
     height: 100%;
@@ -429,6 +467,44 @@ export const Book = styled.div`
     left: 25%;
     width: 150px;
     height: 200px;
+  }
+`;
+export const BookTitle = styled.h2`
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #1362a5;
+  text-align: center;
+  padding-top: 30px;
+  text-shadow: 0px 1px 3px #69afec;
+  font-size: 12px;
+  margin: 0px;
+  @media screen and (min-width: 370px) {
+    padding-top: 50px;
+    font-size: 14px;
+  }
+  @media screen and (min-width: 900px) {
+    padding-top: 80px;
+    font-size: 20px;
+  }
+`;
+export const BookLabel = styled.p`
+  text-transform: uppercase;
+  color: #1362a5;
+  text-align: center;
+
+  text-shadow: 0px 1px 3px #69afec;
+
+  font-family: 'Arial', sans-serif;
+  padding-top: 5px;
+  font-size: 6px;
+  box-shadow: 0px -1px #1362a5;
+  border-top: 1px solid #69afec;
+  margin: 0px 10px;
+  @media screen and (min-width: 370px) {
+    font-size: 8px;
+  }
+  @media screen and (min-width: 900px) {
+    font-size: 10px;
   }
 `;
 

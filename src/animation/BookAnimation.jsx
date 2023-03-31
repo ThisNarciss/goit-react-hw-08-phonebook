@@ -1,8 +1,10 @@
 import {
   Back,
   Book,
+  BookLabel,
   BookLink,
   BookText,
+  BookTitle,
   Front,
   HandIcon,
   HandIconMob,
@@ -66,7 +68,10 @@ export function BookAnimation() {
       <PageThree></PageThree>
       <PageTwo></PageTwo>
       <PageOne></PageOne>
-      <Front></Front>
+      <Front>
+        <BookTitle>Phonebook</BookTitle>
+        <BookLabel>My phone is book</BookLabel>
+      </Front>
     </Book>
   );
 }
