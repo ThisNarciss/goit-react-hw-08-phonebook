@@ -8,8 +8,7 @@ export const ContainerItem = styled.div`
 
 export const Item = styled.li`
   position: relative;
-  padding-block: 1.5rem;
-  padding-inline: 2rem;
+  padding: 5px;
   background-color: ${({ theme }) =>
     theme.palette.mode === 'dark' ? '#512da8' : '#e1bee7'};
   background-image: linear-gradient(to right, rgb(0 0 0 / 0.15), transparent);
@@ -30,7 +29,10 @@ export const Item = styled.li`
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100%;
+    width: 70px;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     transform-origin: calc(50% - (50% * var(--ry))) 50%;
     transform: rotateY(calc(var(--side-rotate) * var(--ry)));
     background-color: inherit;
@@ -50,7 +52,9 @@ export const Item = styled.li`
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100%;
+    width: 70px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     transform-origin: calc(50% - (50% * var(--ry))) 50%;
     transform: rotateY(calc(var(--side-rotate) * var(--ry)));
     background-color: inherit;

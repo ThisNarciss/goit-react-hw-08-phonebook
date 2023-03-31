@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const List = styled.ul`
   width: min(100%, 60rem);
-  overflow: hidden;
+  overflow: auto;
   margin-inline: auto;
   padding-inline: clamp(1rem, 5vw, 4rem);
   list-style: none;

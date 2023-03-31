@@ -24,12 +24,12 @@ import { MaterialUISwitch } from 'components/Switch/Switch';
 import { useMyContext } from 'components/ThemeContainer/ThemeContainer';
 
 export function SiteAppBar() {
-  const colorMode = useMyContext();
-  const { isLoggedIn } = useAuth();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [checked, setChecked] = useState(
     () => JSON.parse(localStorage.getItem('checked')) ?? true
   );
+  const colorMode = useMyContext();
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     localStorage.setItem('checked', JSON.stringify(checked));
@@ -62,6 +62,7 @@ export function SiteAppBar() {
             sx={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'space-between',
             }}
           >
             <IconLogoBox>
