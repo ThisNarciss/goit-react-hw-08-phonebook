@@ -3,14 +3,22 @@ import styled from '@emotion/styled';
 export const ContainerItem = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 5px;
   align-items: center;
+  font-size: 12px;
+  @media screen and (min-width: 600px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 900px) {
+    font-size: 16px;
+  }
 `;
 
 export const Item = styled.li`
   position: relative;
   padding: 5px;
   background-color: ${({ theme }) =>
-    theme.palette.mode === 'dark' ? '#512da8' : '#e1bee7'};
+    theme.palette.mode === 'dark' ? 'transparent' : '#FFFFFF'};
   background-image: linear-gradient(to right, rgb(0 0 0 / 0.15), transparent);
   transform-style: preserve-3d;
 

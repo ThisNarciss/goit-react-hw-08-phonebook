@@ -10,7 +10,7 @@ export const SectionBox = styled.section`
 
   align-items: center;
   padding: 40px 0px;
-  /* height: 100vh; */
+  min-height: 810px;
   background-image: url(${bgimg});
   background-repeat: no-repeat;
   background-position: center;

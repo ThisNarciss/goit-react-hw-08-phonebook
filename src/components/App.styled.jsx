@@ -1,16 +1,12 @@
 import styled from '@emotion/styled';
-import bgImgHomePage from 'images/bg-02.webp';
 
 export const ChildrenBox = styled.div`
-  padding: 30px;
-  border-radius: 10px;
+  height: 810px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 30px;
   max-width: 700px;
-  background-image: url(${bgImgHomePage});
 `;
 
 export const Notification = styled.p`
@@ -50,7 +46,8 @@ export const Figure = styled.figure`
   transition: all 0.1s linear, line-height 0s linear;
   background-position: 50% 100%, center;
   transform-origin: bottom center;
-  &:hover {
+  &:hover,
+  :focus {
     /* color: transparent; */
     text-shadow: 0 0 0em transparent;
     background-position: 50% -100%, center center;

@@ -5,6 +5,7 @@ import {
   Label,
   FormInput,
   Error,
+  Bar,
 } from 'components/FormStyle.styled';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -65,7 +66,6 @@ export const ContactForm = () => {
     >
       <UserForm>
         <InputBox>
-          <Label htmlFor={nameInputId}>Name</Label>
           <FormInput
             id={nameInputId}
             type="text"
@@ -74,11 +74,12 @@ export const ContactForm = () => {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
+          <Bar />
+          <Label htmlFor={nameInputId}>Name</Label>
           <Error name="name" component="p" />
         </InputBox>
 
         <InputBox>
-          <Label htmlFor={numberInputId}>Number</Label>
           <FormInput
             id={numberInputId}
             type="tel"
@@ -87,6 +88,8 @@ export const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+          <Bar />
+          <Label htmlFor={numberInputId}>Number</Label>
           <Error name="number" component="p" />
         </InputBox>
         <Button

@@ -77,7 +77,12 @@ export function UpdateModalForm({ id, name, number }) {
         size="medium"
         onClick={handleOpen}
         sx={{
+          fontSize: { xs: '16px', sm: '18px', md: '20px' },
           ':hover': {
+            backgroundColor: 'green',
+            color: 'white',
+          },
+          ':focus': {
             backgroundColor: 'green',
             color: 'white',
           },

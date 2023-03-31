@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
+  max-height: 810px;
   width: min(100%, 60rem);
   overflow: auto;
   margin-inline: auto;

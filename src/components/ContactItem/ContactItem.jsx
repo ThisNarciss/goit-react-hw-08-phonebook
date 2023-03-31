@@ -40,10 +40,22 @@ export function ContactItem({ bool, id, name, number }) {
       )}
       <Item theme={theme}>
         <ContainerItem>
-          <Text>
-            <BiUser size={20} />
-            {name}:<TelLink href={`tel:${number}`}>{number}</TelLink>
+          <BiUser
+            style={{
+              fontSize: 'inherit',
+              transition: ' color 250ms linear',
+              color: theme.palette.mode === 'dark' ? 'white' : 'black',
+            }}
+          />
+          <Text sx={{ fontSize: { xs: '10px', sm: '12px', md: '14px' } }}>
+            {name}:
           </Text>
+          <TelLink
+            sx={{ fontSize: { xs: '10px', sm: '12px', md: '14px' } }}
+            href={`tel:${number}`}
+          >
+            {number}
+          </TelLink>
           <ContainerBtn>
             <IconButton
               aria-label="delete"
@@ -53,7 +65,9 @@ export function ContactItem({ bool, id, name, number }) {
               }}
               disabled={isDeleting}
               sx={{
+                fontSize: { xs: '16px', sm: '18px', md: '20px' },
                 ':hover': { color: 'white', backgroundColor: 'red' },
+                ':focus': { color: 'white', backgroundColor: 'red' },
                 transitionProperty: 'all',
                 transitionDuration: '250ms',
                 transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1) 0ms',

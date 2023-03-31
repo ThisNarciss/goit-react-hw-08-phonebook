@@ -12,4 +12,7 @@ export const FooterLink = styled(Link)(({ theme }) => ({
   ':hover': {
     textDecoration: 'underline',
   },
+  ':focus': {
+    textDecoration: 'underline',
+  },
 }));

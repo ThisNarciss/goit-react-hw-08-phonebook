@@ -4,46 +4,54 @@ import { Form, Field, ErrorMessage } from 'formik';
 import bgImgHomePage from 'images/bg-02.webp';
 
 export const UserForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px;
+  background: transparent;
+
+  margin: 0 auto;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12);
 `;
 
 export const InputBox = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  max-width: 450px;
+  margin-bottom: 30px;
 `;
 
 export const Label = styled.label`
-  font-size: 14px;
+  color: #c6c6c6;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all 300ms ease;
 `;
 
 export const FormInput = styled(Field)`
+  background: none;
+  color: #fff68f;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
   display: block;
   width: 100%;
-  height: calc(2.25rem + 2px);
-  padding: 0.3rem 0.75rem;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  border: 1px solid #bdbdbd;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: none;
+  border-radius: 0;
+  border-bottom: 3px solid #c6c6c6;
   :focus {
-    color: #212529;
-    background-color: #fff;
-    border-color: #bdbdbd;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    outline: none;
+  }
+  :focus ~ label,
+  :valid ~ label {
+    top: -14px;
+    font-size: 12px;
+    color: #fff68f;
+  }
+  :focus ~ span:before {
+    width: 100%;
   }
 `;
 

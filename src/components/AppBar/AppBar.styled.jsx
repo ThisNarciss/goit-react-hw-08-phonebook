@@ -27,11 +27,12 @@ export const Link = styled(NavLink)`
   font-size: 14px;
   line-height: 1.15;
   position: relative;
-  /* color: #ffffff; */
+
   padding: 5px 10px;
 
   transition: all 250ms linear;
-  :hover {
+  :hover,
+  :focus {
     position: relative;
     color: #fff68f;
   }
@@ -54,7 +55,8 @@ export const Link = styled(NavLink)`
       background-color: #fff68f;
       transition: all 250ms linear;
     }
-    :hover {
+    :hover,
+    :focus {
       position: relative;
       color: #fff68f;
 
