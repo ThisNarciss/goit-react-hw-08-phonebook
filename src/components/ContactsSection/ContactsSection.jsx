@@ -44,6 +44,9 @@ export default function ContactsSection() {
             alignItems: { xs: 'center' },
             gap: '50px',
             backgroundImage: `url(${bgImgHomePage})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
             borderRadius: '10px',
           }}
         >
