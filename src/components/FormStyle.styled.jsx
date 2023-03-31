@@ -10,7 +10,6 @@ export const UserForm = styled(Form)`
   padding: 55px 55px 37px;
   background: transparent;
 
-  margin: 0 auto;
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
     0 2px 2px rgba(0, 0, 0, 0.12);
 `;

@@ -10,11 +10,27 @@ export const ChildrenBox = styled.div`
 `;
 
 export const Notification = styled.p`
+  @keyframes changeSize {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  animation-name: changeSize;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   padding: 20px 40px;
   font: 20px;
   border-radius: 5px;
   border: 1px solid red;
-  color: red;
+  color: white;
+  background-color: red;
   margin-bottom: 20px;
 `;
 
