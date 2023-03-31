@@ -1,4 +1,3 @@
-import { LogoIcon } from 'custom-icon/LogoMobileIcon';
 import {
   Back,
   Book,
@@ -6,6 +5,9 @@ import {
   BookText,
   Front,
   HandIcon,
+  HandIconMob,
+  Logotype,
+  LogotypeMob,
   PageFive,
   PageFore,
   PageOne,
@@ -54,9 +56,11 @@ export function BookAnimation() {
       </PageSix>
       <PageFive>
         <BookLink to={isLoggedIn ? '/contacts' : '/login'}>
-          <LogoIcon size={70} />
+          <Logotype size={70} />
+          <LogotypeMob size={40} />
         </BookLink>
         <HandIcon size={25} />
+        <HandIconMob size={15} />
       </PageFive>
       <PageFore></PageFore>
       <PageThree></PageThree>

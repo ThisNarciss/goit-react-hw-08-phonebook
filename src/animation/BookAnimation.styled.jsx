@@ -1,6 +1,22 @@
 import styled from '@emotion/styled';
+
 import { FaRegHandPointer } from 'react-icons/fa';
+import { FcCellPhone } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
+
+export const Logotype = styled(FcCellPhone)`
+  display: none;
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+`;
+
+export const LogotypeMob = styled(FcCellPhone)`
+  display: block;
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+`;
 
 export const HandIcon = styled(FaRegHandPointer)`
   @keyframes changePositionHand {
@@ -18,12 +34,42 @@ export const HandIcon = styled(FaRegHandPointer)`
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  display: none;
+
+  @media screen and (min-width: 900px) {
+    display: block;
+  }
+`;
+
+export const HandIconMob = styled(FaRegHandPointer)`
+  @keyframes changePositionHand {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(10px);
+    }
+  }
+
+  animation-name: changePositionHand;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  display: block;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
 `;
 
 export const BookLink = styled(NavLink)`
   border-radius: 50%;
+  padding: 0px 10px;
   transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  :hover {
+  :hover,
+  :focus {
     background-color: #d6d6d6;
   }
 `;
