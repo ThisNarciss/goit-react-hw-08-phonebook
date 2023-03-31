@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from 'redux/auth/operations';
@@ -74,7 +74,7 @@ export function UserMenu() {
         onClose={handleCloseUserMenu}
       >
         <MenuItem onClick={handleCloseUserMenu}>
-          <Typography textAlign="center">Profile</Typography>
+          {/* <Typography textAlign="center">Profile</Typography> */}
         </MenuItem>
         <MenuItem onClick={handleCloseUserMenu}>
           <IconButton onClick={handleClickLogoutBtn} sx={{ p: 0 }}>

@@ -13,6 +13,7 @@ import { Formik } from 'formik';
 import Button from '@mui/material/Button';
 
 import {
+  Bar,
   Error,
   FormInput,
   InputBox,
@@ -27,7 +28,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  borderRadius: '8px',
   boxShadow: 24,
   p: 4,
 };
@@ -111,7 +112,6 @@ export function UpdateModalForm({ id, name, number }) {
             {({ values }) => (
               <UserForm>
                 <InputBox>
-                  <Label htmlFor={nameInputId}>Name</Label>
                   <FormInput
                     id={nameInputId}
                     type="text"
@@ -121,11 +121,12 @@ export function UpdateModalForm({ id, name, number }) {
                     required
                     value={values.name}
                   />
+                  <Bar />
+                  <Label htmlFor={nameInputId}>Name</Label>
                   <Error name="name" component="p" />
                 </InputBox>
 
                 <InputBox>
-                  <Label htmlFor={numberInputId}>Number</Label>
                   <FormInput
                     id={numberInputId}
                     type="tel"
@@ -135,6 +136,8 @@ export function UpdateModalForm({ id, name, number }) {
                     required
                     value={values.number}
                   />
+                  <Bar />
+                  <Label htmlFor={numberInputId}>Number</Label>
                   <Error name="number" component="p" />
                 </InputBox>
                 <Button
