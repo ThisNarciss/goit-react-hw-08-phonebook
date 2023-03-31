@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.724d1e00.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.090565cb.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.dd05ceea.js",
     "static/js/629.0533c77d.chunk.js": "/goit-react-hw-08-phonebook/static/js/629.0533c77d.chunk.js",
-    "static/js/835.d9fdf0f8.chunk.js": "/goit-react-hw-08-phonebook/static/js/835.d9fdf0f8.chunk.js",
+    "static/js/835.166e6ccc.chunk.js": "/goit-react-hw-08-phonebook/static/js/835.166e6ccc.chunk.js",
     "static/js/236.870951fd.chunk.js": "/goit-react-hw-08-phonebook/static/js/236.870951fd.chunk.js",
     "static/js/111.01779d15.chunk.js": "/goit-react-hw-08-phonebook/static/js/111.01779d15.chunk.js",
     "static/js/719.f1446557.chunk.js": "/goit-react-hw-08-phonebook/static/js/719.f1446557.chunk.js",
@@ -14,9 +14,9 @@
     "static/media/bg-02.webp": "/goit-react-hw-08-phonebook/static/media/bg-02.10201a0e4c94778db25b.webp",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.724d1e00.css.map": "/goit-react-hw-08-phonebook/static/css/main.724d1e00.css.map",
-    "main.090565cb.js.map": "/goit-react-hw-08-phonebook/static/js/main.090565cb.js.map",
+    "main.dd05ceea.js.map": "/goit-react-hw-08-phonebook/static/js/main.dd05ceea.js.map",
     "629.0533c77d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/629.0533c77d.chunk.js.map",
-    "835.d9fdf0f8.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/835.d9fdf0f8.chunk.js.map",
+    "835.166e6ccc.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/835.166e6ccc.chunk.js.map",
     "236.870951fd.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/236.870951fd.chunk.js.map",
     "111.01779d15.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/111.01779d15.chunk.js.map",
     "719.f1446557.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/719.f1446557.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.724d1e00.css",
-    "static/js/main.090565cb.js"
+    "static/js/main.dd05ceea.js"
   ]
 }
