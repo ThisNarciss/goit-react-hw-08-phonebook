@@ -153,7 +153,7 @@ export const PageSix = styled.div`
   animation-duration: 1000ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   animation-fill-mode: forwards;
-
+  overflow: hidden;
   transform-style: preserve-3d;
   position: absolute;
   width: 100%;
